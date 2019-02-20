@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: eurekaserver
+Implementation-Version: 0.0.1-SNAPSHOT-8000
+Built-By: 35-pxiaodong
+Implementation-Vendor-Id: brilliance.znjt
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/eurekaserver
+Created-By: Maven Integration for Eclipse
+

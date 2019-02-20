@@ -1,0 +1,31 @@
+server:
+  port: 8004
+  tomcat: 
+    uri-encoding: UTF-8
+spring:
+  application:
+    name: eurekazuul
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+#http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**;建议使用默认规则,示例:http://192.168.66.72:8004/producer-service/produce/test?name=lvweishan
+#http://ZUUL_HOST:ZUUL_PORT/path配置中的produce/**;使用配置中的访问路径,示例：http://192.168.66.72:8004/produce/produce/test?name=lvweishan
+zuul:
+  routes:
+    feign:
+      path: /feign/**
+      serviceId: consumer-service-feign
+    ribbon:
+      path: /ribbon/**
+      serviceId: consumer-service-ribbon
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.66.77:8000/eureka/,http://192.168.66.77:9000/eureka/
+  instance: 
+    prefer-ip-address: true
+    ip-address: 192.168.66.77
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+

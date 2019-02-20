@@ -1,0 +1,2 @@
+后续把此项目扩展成各个业务模块
+服务消费者可以用feign或ribbon的restTemplate
